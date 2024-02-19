@@ -1,5 +1,5 @@
 # TDL_prep
-Front end for a TodoList app, using HTML, CSS, JavaScript.
+This is a learning project, where I handled the Front end part for this Todo list app, using HTML, CSS, JavaScript.
 
 Back end handled by: [@AdyPolyCode](https://github.com/AdyPolyCode)
 

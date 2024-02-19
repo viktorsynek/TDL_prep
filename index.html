@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./imgs/logo.ico" type="image/x-icon" />
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div id="loading">
+        <h2>Welcome!</h2>
+    </div>
+    <div id="body" class="hidden">
+        <div class="topnav">
+            <nav class="navbar hidden fixed">
+                <ol type="1" class="topnav-items items-left">
+                    <div class="normal">
+                        <li>
+                            <a class="nice-btn" href="./index.html">Todo's</a>
+                        </li>
+                        <li><a href="./html/about.html">About</a></li>
+                    </div>
+                </ol>
+                <ul class="topnav-items items-right items-center">
+                    <li>
+                        <a id="dark-mode-toggle">
+                            <span class="dark"><i class="fas fa-moon"></i></span>
+                            <span class="light"><i class="fas fa-sun"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="topnav-items items-right topnav-btn">
+                <li>
+                    <button id="topnav-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="todo-btn-container">
+            <button class="todo-btn">
+                <i class="fas fa-plus"></i> Create Todo
+            </button>
+        </div>
+        <div class="todos">
+
+        </div>
+
+    </div>
+    <div class="del-window hidden">
+        <h5>Are you sure you want to delete?</h5>
+        <button id="no-del">No</button>
+        <button id="del">Yes</button>
+    </div>
+    <div class="del-msg hidden">
+    </div>
+    <div class="todo-window hidden" id="create">
+        <div class="window-creator">
+            <button class="todo-close-btn" id="create-close">X</button>
+            <form action="http://localhost:3333/todos" method="post" class="todo-create" id="create-btn">
+                <br /><br />
+                <br />
+                <div class="group">
+                    <input id="title" type="text" name="title" required />
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Title</label>
+                </div>
+                <div class="group">
+                    <div class="name">Description</div>
+                    <div class="value">
+                        <div class="input-group">
+                            <textarea id="desc" class="textarea--style-6" name="message" placeholder="" maxlength="200"
+                                required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <button class="todo-create-btn" type="submit">
+                        Create
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="todo-window hidden" id="update">
+        <div class="window-creator">
+            <button class="todo-close-btn" id="update-close">X</button>
+            <form action="http://localhost:3333/todos" method="post" class="todo-create" id="update-btn">
+                <br /><br />
+                <br />
+                <div class="group">
+                    <input id="update-title" type="text" name="title" required />
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Title</label>
+                </div>
+                <div class="group">
+                    <div class="name">Description</div>
+                    <div class="value">
+                        <div class="input-group">
+                            <textarea id="update-desc" class="textarea--style-6" name="message" placeholder=""
+                                maxlength="200" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <button class="todo-update-btn" type="submit">
+                        Update
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/aa539ee7e3.js" crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/loading.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/getTodos.js"></script>
+    <script src="./scripts/todo.js"></script>
+</body>
+
+</html>

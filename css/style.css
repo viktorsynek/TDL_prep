@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Fredoka+One&family=Open+Sans:wght@300&family=Roboto+Mono:wght@300;400;500&display=swap');
+
+:root {
+    --clr-light: #fefefe;
+    --clr-dark: #101011;
+    --clr-main: #101011;
+    --clr-second: #a673ed;
+    --clr-asd: #e1e9f0;
+    --bg-color: rgba(58, 58, 62, 0.04);
+    --text-color: rgb(127, 127, 128);
+    --border-color: rgba(196, 196, 197, 1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+    --main-color: var(--clr-main);
+    --second-color: var(--clr-second);
+    --asd: var(--clr-asd);
+    --bg: var(--bg-color);
+    --text: var(--text-color);
+    --border: var(--border-color);
+    --shadow: var(--shadow-color);
+
+    --base-font: 'Roboto Slab', sans-serif;
+    --second-font: 'Roboto Mono', monospace;
+    --third-font: 'Barlow Condensed', sans-serif;
+    --fourth-font: 'Fredoka One', sans-serif;
+}
+
+.darkmode {
+    --clr-main: #f9fbfd;
+    --clr-asd: #101826;
+    --bg-color: rgba(58, 58, 62, 0.3);
+    --text-color: rgba(196, 196, 197, 0.5);
+    --border-color: rgba(196, 196, 197, 0.2);
+    --shadow-color: rgba(255, 255, 255, 0.1);
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+    --main-color: var(--clr-main);
+    --bg: var(--bg-color);
+    --text: var(--text-color);
+    --border: var(--border-color);
+    --asd: var(--clr-asd);
+    --shadow: var(--shadow-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden !important;
+    white-space: nowrap;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--base-font);
+    font-weight: 600;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    background-color: var(--asd);
+}
+
+#loading h2 {
+    white-space: nowrap;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+    color: var(--second-color);
+}
+
+.fade-in {
+    animation: fadeIn 1.2s;
+    opacity: 1;
+}
+
+.fade-out {
+    animation: fadeOut 1s;
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f3ebeb;
+}
+::-webkit-scrollbar-thumb {
+    background: #afa8a8;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8a8888;
+}
+
+/* end of scrollbar*/
+
+/*topnav*/
+
+.topnav {
+    width: 100%;
+    height: 50px;
+    font-family: var(--second-font);
+}
+
+.navbar {
+    background-color: rgba(128, 128, 128, 0.001);
+    backdrop-filter: blur(10px);
+    margin-top: 0;
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.topnav-items li {
+    display: inline;
+    margin-right: 75px;
+    margin-left: 75px;
+}
+
+#colored {
+    color: var(--second-color);
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all ease-in-out 0.5s;
+}
+
+a:hover {
+    color: var(--second-color);
+}
+
+.items-right {
+    position: absolute !important;
+    right: 0.5%;
+    margin-right: 0;
+}
+
+.fixed {
+    margin: 0;
+    z-index: 1 !important;
+    position: fixed;
+    width: 100%;
+}
+
+.items-center {
+    right: 15%;
+    top: 0;
+}
+
+.topnav-btn {
+    z-index: 10 !important;
+    margin-top: 12px !important;
+    transition: all ease-in-out 0.3s;
+}
+
+.topnav-btn:hover {
+    opacity: 0.7;
+}
+
+.todo-btn-container button {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(var(--main-color) 0.4);
+    border: 3px solid var(--border);
+    color: var(--text);
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--third-font);
+    font-weight: 900;
+    transition: all ease-in-out 0.3s;
+    box-shadow: 2px 2px 25px var(--shadow);
+}
+
+.todo-btn-container button:hover {
+    background-color: var(--bg);
+}
+
+.nice-btn {
+    border: 0px solid black;
+    font-family: var(--third-font);
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #7deee4 0%, #9797e5, #ce7dee 100%);
+    padding: 8px 20px;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.25em;
+    transition: all ease-in-out 0.3s;
+}
+
+.nice-btn:hover {
+    color: #dadada;
+}
+
+.topnav button {
+    background-color: transparent;
+    border: 0px;
+    color: var(--main-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.topnav button:hover {
+    color: var(--main-color);
+}
+
+/*todos*/
+
+.todos {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 150px;
+}
+
+.todos .child {
+    display: flex;
+    justify-content: center;
+    flex: 33%;
+}
+
+.todos div div {
+    width: 300px;
+    margin: 15px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    box-shadow: 0px 0px 5px var(--second-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.todos div h2 {
+    text-align: center;
+    min-width: 100%;
+    color: var(--second-color);
+    margin-top: 40px;
+}
+
+.todos div p {
+    text-align: start;
+    color: var(--main-color);
+    white-space: normal;
+}
+
+.todos button {
+    position: relative;
+    top: -8px;
+    right: -8px;
+}
+
+.todos #edit {
+    right: 240px !important;
+}
+
+.todos i {
+    font-size: 16px;
+}
+
+/*end of todos*/
+
+.window-creator {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid var(--main-color);
+    border-radius: 15px;
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5);
+    width: 450px;
+    height: 550px;
+}
+
+.window-creator button,
+.todos button {
+    float: right;
+    background-color: transparent;
+    border: 0px solid black;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+    transition: all ease-in-out 0.3s;
+    color: var(--main-color);
+    opacity: 1;
+}
+.window-creator button:hover,
+.todos button:hover {
+    opacity: 0.5;
+}
+.group {
+    margin-top: 20px;
+    margin-left: 15%;
+    position: relative;
+}
+input {
+    background-color: var(--background);
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+input {
+    color: var(--main-color);
+}
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: var(--second-color);
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 315px;
+}
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--second-color);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/*
+*/
+
+.name {
+    text-align: start;
+    margin-bottom: 15px;
+    color: var(--second-color);
+}
+textarea {
+    width: 275px;
+    height: 250px;
+    outline: none;
+    margin: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+.input-group {
+    position: relative;
+    right: 32px;
+    margin: 0;
+}
+
+.input--style-6,
+.textarea--style-6 {
+    background: transparent;
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: var(--main-color);
+    font-size: 15px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    padding: 0 10px;
+}
+
+.input--style-6::-webkit-input-placeholder,
+.textarea--style-6::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #999;
+}
+
+.input--style-6:-moz-placeholder,
+.textarea--style-6:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999;
+    opacity: 1;
+}
+
+.input--style-6::-moz-placeholder,
+.textarea--style-6::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999;
+    opacity: 1;
+}
+
+.input--style-6:-ms-input-placeholder,
+.textarea--style-6:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+.input--style-6:-ms-input-placeholder,
+.textarea--style-6:-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #999;
+}
+
+.input--style-6:focus,
+.textarea--style-6:focus {
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    transform: translateY(-3px);
+}
+
+.textarea--style-6 {
+    line-height: 1.2;
+    min-height: 120px;
+    padding: 10px 20px;
+}
+
+.group button {
+    margin-top: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-75%, -50%);
+    border: 2px solid var(--second-color);
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.group button:hover {
+    background-color: rgba(199, 160, 253, 0.2);
+    opacity: 0.9;
+}
+
+.del-window {
+    background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    color: var(--background);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+}
+
+.del-window button {
+    background-color: #b8b8b8;
+    border: 1px solid #b8b8b8;
+    border-radius: 8px;
+    padding: 5px 15px;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.del-window button:hover {
+    opacity: 0.8;
+}
+
+.del-window #del {
+    background-color: rgb(249, 129, 129);
+    border: 1px solid rgb(249, 129, 129);
+}
+
+.del-msg {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    width: 500px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    padding: 10px;
+    padding-top: 0px;
+    color: var(--second-color);
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 750px) {
+    .items-left {
+        padding-left: 0;
+    }
+    .topnav-items li {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: var(--second-color);
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@-moz-keyframes inputHighlighter {
+    from {
+        background: var(--second-color);
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@keyframes inputHighlighter {
+    from {
+        background: var(--second-color);
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

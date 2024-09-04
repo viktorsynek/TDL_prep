@@ -23,4 +23,4 @@ This is a front-end todo list project as part of a learning initiative. The back
 
 - **Backend**: The backend part of the Todo list app was handled by Adam Polácsek (@AdyPolyCode). 
 
-Feel free to explore the front-end part of the project and utilize it for learning purposes. Thank you to [Adam](https://github.com/AdyPolyCode) for his contribution to the backend part!
+Feel free to explore the front-end part of the project and utilize it for learning purposes. Thanks [Adam](https://github.com/AdyPolyCode) for the contributions to the backend part!
